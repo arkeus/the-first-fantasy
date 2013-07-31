@@ -12,7 +12,7 @@ package io.arkeus.tff.game.entity {
 			super(50, 50, Resource.PLAYER, 72, 100);
 			
 			addAnimation("stand", [15], 15, false);
-			addAnimation("walk", [0, 1, 2, 3, 4, 5, 6, 7, 8], 10);
+			addAnimation("walk", [0, 1, 2, 3, 4, 5, 6, 7], 10);
 			animate("walk");
 			
 			acceleration.y = 1200;
