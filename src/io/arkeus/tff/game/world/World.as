@@ -7,5 +7,10 @@ package io.arkeus.tff.game.world {
 			super();
 			Ax.background.hex = 0xffd0f4f7;
 		}
+		
+		public function initialize():void {
+			getTile(4).setProperty("slope", 0.45);
+			getTile(7).setProperty("slope", -0.45);
+		}
 	}
 }

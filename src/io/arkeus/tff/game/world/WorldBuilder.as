@@ -30,7 +30,9 @@ package io.arkeus.tff.game.world {
 				}
 				data.push(row);
 			}
+			
 			world.build(data, Resource.TILES, Tile.SIZE, Tile.SIZE, 1);
+			world.initialize();
 			return world;
 		}
 		
