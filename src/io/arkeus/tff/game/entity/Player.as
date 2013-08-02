@@ -6,16 +6,20 @@ package io.arkeus.tff.game.entity {
 	import org.axgl.render.AxBlendMode;
 
 	public class Player extends Entity {
-		private static const SPEED:uint = 400;
+		private static const SPEED:uint = 200;
 		
 		public function Player() {
-			super(50, 50, Resource.PLAYER, 72, 100);
+			super(50, 50, Resource.PLAYER_SMALL, 36, 50);
 			
 			addAnimation("stand", [15], 15, false);
 			addAnimation("walk", [0, 1, 2, 3, 4, 5, 6, 7], 10);
 			animate("walk");
 			
 			acceleration.y = 1200;
+			width = 26;
+			offset.x = 5;
+			height = 20;
+			offset.y = 29;
 			
 			blend = AxBlendMode.TRANSPARENT_TEXTURE;
 		}
