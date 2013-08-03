@@ -1,6 +1,7 @@
 package io.arkeus.tff.game.world {
 	import org.axgl.Ax;
 	import org.axgl.AxEntity;
+	import org.axgl.AxU;
 	import org.axgl.tilemap.AxTile;
 	import org.axgl.tilemap.AxTilemap;
 
@@ -40,11 +41,14 @@ package io.arkeus.tff.game.world {
 		
 		private function separateSlope(tile:AxTile, entity:AxEntity):void {
 			var x:Number = entity.center.x - tile.x;
-			if (x < 0 || x > tile.width) {
-				return;
-			}
-			var y:Number = tile.getProperty("slope") * x + tile.getProperty("intercept");
+			
+			var slope:Number = tile.getProperty("slope");
+			var intercept:Number = tile.getProperty("intercept");
+			
+			var offset:Number = x;
+			var y:Number = AxU.clamp(slope * offset + intercept * tile.height, -Number.MAX_VALUE, tile.height);
 			var targetY:Number = tile.y + tile.height - y;
+			
 			if (entity.y + entity.height > targetY) {
 				entity.y = targetY - entity.height;
 				entity.touching |= DOWN;
