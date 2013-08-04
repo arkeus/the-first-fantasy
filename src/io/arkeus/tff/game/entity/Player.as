@@ -6,7 +6,9 @@ package io.arkeus.tff.game.entity {
 	import org.axgl.render.AxBlendMode;
 
 	public class Player extends Entity {
-		private static const SPEED:uint = 200;
+		private static const WALK_SPEED:uint = 150;
+		private static const RUN_SPEED:uint = 250;
+		private static const ACCELERATION:uint = 400;
 		
 		public function Player() {
 			super(50, 50, Resource.PLAYER_SMALL, 36, 50);
@@ -16,6 +18,8 @@ package io.arkeus.tff.game.entity {
 			animate("walk");
 			
 			acceleration.y = 1200;
+			drag.x = 600;
+			
 			width = 26;
 			offset.x = 5;
 			height = 20;
@@ -25,6 +29,7 @@ package io.arkeus.tff.game.entity {
 		}
 		
 		override public function update():void {
+			trace(x, y);
 			handleInput();
 			handleAnimation();
 			super.update();
@@ -32,12 +37,18 @@ package io.arkeus.tff.game.entity {
 		
 		private function handleInput():void {
 			if (Ax.keys.held(AxKey.A)) {
-				velocity.x = -SPEED;
+				acceleration.x = -ACCELERATION;
 			} else if (Ax.keys.held(AxKey.D)) {
-				velocity.x = SPEED;
+				acceleration.x = ACCELERATION;
 			} else {
-				velocity.x = 0;
+				acceleration.x = 0;
 			}
+			
+			if (acceleration.x > 0 && velocity.x < 0 || acceleration.x < 0 && velocity.x > 0) {
+				acceleration.x *= 2;
+			}
+			
+			maxVelocity.x = speed;
 			
 			if (Ax.keys.pressed(AxKey.W) && touching & DOWN) {
 				velocity.y = -450;
@@ -45,15 +56,19 @@ package io.arkeus.tff.game.entity {
 		}
 		
 		private function handleAnimation():void {
-			if (velocity.x < 0) {
+			if (acceleration.x < 0) {
 				facing = LEFT;
 				animate("walk");
-			} else if (velocity.x > 0) {
+			} else if (acceleration.x > 0) {
 				facing = RIGHT;
 				animate("walk");
 			} else {
 				animate("stand");
 			}
+		}
+		
+		private function get speed():Number {
+			return Ax.keys.held(AxKey.SHIFT) ? RUN_SPEED : WALK_SPEED;
 		}
 	}
 }

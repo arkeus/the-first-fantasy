@@ -52,6 +52,7 @@ package io.arkeus.tff.game.world {
 			if (entity.y + entity.height > targetY) {
 				entity.y = targetY - entity.height;
 				entity.touching |= DOWN;
+				entity.velocity.y = 0;
 			}
 		}
 	}

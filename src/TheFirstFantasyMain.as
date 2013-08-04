@@ -7,7 +7,11 @@ package {
 
 	public class TheFirstFantasyMain extends Ax {
 		public function TheFirstFantasyMain() {
-			super(GameState);
+			super(GameState, 0, 0, 1, 60);
+		}
+		
+		override public function create():void {
+			//Ax.unfocusedFramerate = 60;
 		}
 	}
 }
