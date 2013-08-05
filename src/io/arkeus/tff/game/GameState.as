@@ -15,6 +15,8 @@ package io.arkeus.tff.game {
 			var builder:WorldBuilder = new WorldBuilder(Resource.WORLD);
 			this.add(world = builder.build());
 			this.add(player = new Player);
+			
+			Ax.camera.follow(player);
 		}
 		
 		override public function update():void {

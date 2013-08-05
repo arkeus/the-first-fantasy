@@ -26,6 +26,8 @@ package io.arkeus.tff.game.world {
 				4: [1, 0],
 				7: [-1, 1]
 			});
+			
+			Ax.camera.setBounds(0, 0, width, height);
 		}
 		
 		private function setSlopes(slopeMap:Object):void {
