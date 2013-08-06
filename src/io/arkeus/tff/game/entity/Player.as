@@ -29,7 +29,6 @@ package io.arkeus.tff.game.entity {
 		}
 		
 		override public function update():void {
-			trace(x, y);
 			handleInput();
 			handleAnimation();
 			super.update();
@@ -68,7 +67,7 @@ package io.arkeus.tff.game.entity {
 		}
 		
 		private function get speed():Number {
-			return Ax.keys.held(AxKey.SHIFT) ? RUN_SPEED : WALK_SPEED;
+			return !Ax.keys.held(AxKey.SHIFT) ? RUN_SPEED : WALK_SPEED;
 		}
 	}
 }
