@@ -86,7 +86,7 @@ package io.arkeus.tff.game.world {
 			dlp = pixels.getPixel(x - 1, y + 1);
 			drp = pixels.getPixel(x + 1, y + 1);
 			
-			c = cp != 0x0 && cp != 0xffffff;
+			c = cp == Tile.TERRAIN;
 			l = cp == lp || x == 0;
 			r = cp == rp || x == pixels.width - 1;
 			d = cp == dp || y == pixels.height - 1;
