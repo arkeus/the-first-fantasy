@@ -2,6 +2,7 @@ package io.arkeus.tff.game.world {
 	import org.axgl.Ax;
 	import org.axgl.AxEntity;
 	import org.axgl.AxU;
+	import org.axgl.render.AxBlendMode;
 	import org.axgl.tilemap.AxTile;
 	import org.axgl.tilemap.AxTilemap;
 
@@ -9,6 +10,7 @@ package io.arkeus.tff.game.world {
 		public function World() {
 			super();
 			Ax.background.hex = 0xffd0f4f7;
+			blend = AxBlendMode.TRANSPARENT_TEXTURE;
 		}
 		
 		public function initialize():void {
@@ -20,6 +22,7 @@ package io.arkeus.tff.game.world {
 			getTile(12).collision = NONE;
 			getTile(5).collision = NONE;
 			getTile(6).collision = NONE;
+			getTile(14).collision = getTile(24).collision = NONE;
 			// tile_id: [slope, intercept]
 			
 			setSlopes({

@@ -3,14 +3,12 @@ package io.arkeus.tff.game.world {
 	import flash.display.BitmapData;
 	
 	import io.arkeus.tff.assets.Resource;
-	
-	import org.axgl.AxU;
 
 	public class WorldBuilder {
 		private var pixels:BitmapData;
 		private var x:uint, y:uint;
 		private var lp:uint, rp:uint, up:uint, dp:uint, cp:uint;
-		private var l:Boolean, r:Boolean, u:Boolean, d:Boolean, c:Boolean;
+		private var l:Boolean, r:Boolean, u:Boolean, d:Boolean;
 		private var ulp:uint, urp:uint, dlp:uint, drp:uint;
 		private var ul:Boolean, ur:Boolean, dl:Boolean, dr:Boolean;
 		
@@ -37,10 +35,15 @@ package io.arkeus.tff.game.world {
 		}
 		
 		private function getTile():uint {
-			if (!c) {
-				return 0;
+			if (cp == Tile.TERRAIN) {
+				return getTerrain();
+			} else if (cp == Tile.WATER) {
+				return getWater();
 			}
-			
+			return 0;
+		}
+		
+		private function getTerrain():uint {
 			if (l && r && u && d) {
 				if (!ul) {
 					return 5;
@@ -75,6 +78,13 @@ package io.arkeus.tff.game.world {
 			return 0;
 		}
 		
+		private function getWater():uint {
+			if (!u) {
+				return 14;
+			}
+			return 24;
+		}
+		
 		private function pixelSetup():void {
 			cp = pixels.getPixel(x, y);
 			lp = pixels.getPixel(x - 1, y);
@@ -86,7 +96,6 @@ package io.arkeus.tff.game.world {
 			dlp = pixels.getPixel(x - 1, y + 1);
 			drp = pixels.getPixel(x + 1, y + 1);
 			
-			c = cp == Tile.TERRAIN;
 			l = cp == lp || x == 0;
 			r = cp == rp || x == pixels.width - 1;
 			d = cp == dp || y == pixels.height - 1;
