@@ -1,9 +1,9 @@
 package io.arkeus.tff.game.entity {
 	import io.arkeus.tff.assets.Resource;
 	
-	import org.axgl.Ax;
-	import org.axgl.input.AxKey;
-	import org.axgl.render.AxBlendMode;
+	import io.axel.Ax;
+	import io.axel.input.AxKey;
+	import io.axel.render.AxBlendMode;
 
 	public class Player extends Entity {
 		private static const WALK_SPEED:uint = 150;
@@ -13,8 +13,8 @@ package io.arkeus.tff.game.entity {
 		public function Player() {
 			super(50, 50, Resource.PLAYER_SMALL, 36, 50);
 			
-			addAnimation("stand", [15], 15, false);
-			addAnimation("walk", [0, 1, 2, 3, 4, 5, 6, 7], 10);
+			animations.add("stand", [15], 15, false);
+			animations.add("walk", [0, 1, 2, 3, 4, 5, 6, 7], 10);
 			animate("walk");
 			
 			acceleration.y = 1200;

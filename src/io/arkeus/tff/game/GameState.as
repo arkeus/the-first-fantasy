@@ -4,8 +4,8 @@ package io.arkeus.tff.game {
 	import io.arkeus.tff.game.world.World;
 	import io.arkeus.tff.game.world.WorldBuilder;
 	
-	import org.axgl.Ax;
-	import org.axgl.AxState;
+	import io.axel.Ax;
+	import io.axel.state.AxState;
 
 	public class GameState extends AxState {
 		public var world:World;

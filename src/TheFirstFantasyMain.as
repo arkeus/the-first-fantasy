@@ -1,7 +1,7 @@
 package {
 	import io.arkeus.tff.game.GameState;
 	
-	import org.axgl.Ax;
+	import io.axel.Ax;
 	
 	[SWF(width = "700", height = "420", backgroundColor = "#ffffff")]
 

@@ -1,10 +1,10 @@
 package io.arkeus.tff.game.world {
-	import org.axgl.Ax;
-	import org.axgl.AxEntity;
-	import org.axgl.AxU;
-	import org.axgl.render.AxBlendMode;
-	import org.axgl.tilemap.AxTile;
-	import org.axgl.tilemap.AxTilemap;
+	import io.axel.Ax;
+	import io.axel.AxU;
+	import io.axel.base.AxEntity;
+	import io.axel.render.AxBlendMode;
+	import io.axel.tilemap.AxTile;
+	import io.axel.tilemap.AxTilemap;
 
 	public class World extends AxTilemap {
 		public function World() {
