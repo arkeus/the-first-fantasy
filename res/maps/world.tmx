@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="21" tileheight="21">
+<map version="1.0" orientation="orthogonal" width="24" height="11" tilewidth="21" tileheight="21">
  <tileset firstgid="1" name="tiles" tilewidth="21" tileheight="21" spacing="2" margin="2">
   <image source="../world/spritesheet.png" width="692" height="692"/>
  </tileset>
- <layer name="background" width="100" height="100">
+ <layer name="background" width="24" height="11">
   <data encoding="base64" compression="zlib">
-   eJzt0zkKACAMBEDxe/7/P7YKglcKwRnYLtUuSQkAAAAAAAAAAAAAAAAA/lVyn5Wb2R1nRj1Hhj32eIs93tN2F7mDPe75BwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQgWXFiQZ
+   eJxjYBgFwx14M6FiYtQQUodP3yhGDSdsbGqZS0w8kmouMgAACPAkGQ==
   </data>
  </layer>
- <layer name="below" width="100" height="100">
+ <layer name="below" width="24" height="11">
   <data encoding="base64" compression="zlib">
-   eJzt0zEKwCAQBED9/7v0I8lDJEUKQyCcIEKcKQ62WNjmUgIAAAAAAAAAAAAAAGYrqwfQOVYP2ED9yNH+zS+NOa+THznaf+GXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPirBps1CFA=
+   eJxjYCAeHCVBLTngMRl6jhHgk6ofBmB+fQIiGBHiT0g0H5d6cvw6CkYBvQEAQ2EIUA==
   </data>
  </layer>
- <layer name="main" width="100" height="100">
+ <layer name="main" width="24" height="11">
   <data encoding="base64" compression="zlib">
-   eJzt1mFqwjAYBuCMCts1Bupx9CJ6gIHgYIeQ/dhOtCvsLma0hTS0kmDdBj4PvIRAvhDytbQhAAAAAAAAAAAAAADMZ/PXB2BAP/4X/bitbZdrfMe8deOc+9LaZuOPY8whyesvn4nW10Pbi4+Y9ySfQU9uoX/eX2JOYfgO9Ml7kfYkX5vvQ53+bvN5nmUTwjrJqhlfN7UvZfr7zed5LtWOrbtUR72xf6Ox7zzz21esnepFzR5MWxTmKanZxTwW1lHnuTDrMLznVWEdAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHCfzoA8Kro=
+   eJxjYCAN+JGo3h+KKQF3gbgZShNjrj8aDQL1QFyDhBsodBMMnGGEmD0XiGci4XlE2gFzTyUQT0dzIwyjm41sB7padHNgamEAmzkgrMLMwKCGhFWZsatDNwemHgbUmLFjbACfOnz6QABb3GOLd2JALglqcZmNywwWIjEHkp4cIGYnUp8ikVgNTZ8qkfoAYkgqHg==
   </data>
  </layer>
- <layer name="above" width="100" height="100">
+ <layer name="above" width="24" height="11">
   <data encoding="base64" compression="zlib">
-   eJzt08EJACAMA8CCG7iIS7j/TC4hpOjdO4F8UgUAAAAAAAAAAAAAAPCfmR4ADawLeV8CgKw9sn0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHjVAcaIARE=
+   eJxjYBhcQGigHUAk0KeC+qHi15EIXJgHVv9gAQD84QER
   </data>
  </layer>
- <layer name="foreground" width="100" height="100">
+ <layer name="foreground" width="24" height="11">
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T+1lC6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAbnEAAAQ==
+   eJxjYBgFo2AUjALsAAAEIAAB
   </data>
  </layer>
 </map>
