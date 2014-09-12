@@ -11,7 +11,9 @@ package io.arkeus.tff.game.entity {
 		private static const ACCELERATION:uint = 400;
 		
 		public function Player() {
-			super(50, 50, Resource.PLAYER_SMALL, 36, 50);
+			super(50, 50, Resource.TILES_V2, 21, 21);
+			
+			animations.addAtlas("stand", [[462, 2]], 15, false);
 			
 			animations.add("stand", [15], 15, false);
 			animations.add("walk", [0, 1, 2, 3, 4, 5, 6, 7], 10);
