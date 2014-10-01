@@ -1,9 +1,9 @@
-package io.arkeus.tff.game.worldv2 {
+package io.arkeus.tff.game.world {
 	import io.axel.Ax;
 	import io.axel.tilemap.AxTilemap;
 
-	public class WorldV2Layer extends AxTilemap {
-		public function WorldV2Layer() {
+	public class WorldLayer extends AxTilemap {
+		public function WorldLayer() {
 		}
 		
 		public function initialize():void {
