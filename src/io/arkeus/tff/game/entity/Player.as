@@ -6,26 +6,26 @@ package io.arkeus.tff.game.entity {
 	import io.axel.render.AxBlendMode;
 
 	public class Player extends Entity {
-		private static const WALK_SPEED:uint = 150;
-		private static const RUN_SPEED:uint = 250;
-		private static const ACCELERATION:uint = 400;
+		private static const WALK_SPEED:uint = 80;
+		private static const RUN_SPEED:uint = 120;
+		private static const ACCELERATION:uint = 300;
 		
 		public function Player() {
-			super(50, 50, Resource.TILES_V2, 21, 21);
+			super(21, 21, Resource.TILES_V2, 21, 21);
 			
 			animations.addAtlas("stand", [[462, 2]], 15, false);
-			
-			animations.add("stand", [15], 15, false);
-			animations.add("walk", [0, 1, 2, 3, 4, 5, 6, 7], 10);
+			animations.addAtlas("walk", [[646, 2], [669, 2]], 8);
+			animations.addAtlas("jump", [[600, 2]], 15, false);
+			animations.addAtlas("fall", [[623, 2]], 15, false);
 			animate("walk");
+			
+			width = 11;
+			offset.x = 5;
+			height = 19;
+			offset.y = 2;
 			
 			acceleration.y = 1200;
 			drag.x = 600;
-			
-			width = 26;
-			offset.x = 5;
-			height = 20;
-			offset.y = 29;
 			
 			blend = AxBlendMode.TRANSPARENT_TEXTURE;
 		}
@@ -52,19 +52,25 @@ package io.arkeus.tff.game.entity {
 			maxVelocity.x = speed;
 			
 			if (Ax.keys.pressed(AxKey.W) && touching & DOWN) {
-				velocity.y = -450;
+				velocity.y = -350;
 			}
 		}
 		
 		private function handleAnimation():void {
-			if (acceleration.x < 0) {
-				facing = LEFT;
-				animate("walk");
-			} else if (acceleration.x > 0) {
-				facing = RIGHT;
-				animate("walk");
+			if (velocity.y < 0) {
+				animate("jump");
+			} else if (velocity.y > 0) {
+				animate("fall");
 			} else {
-				animate("stand");
+				if (acceleration.x < 0) {
+					facing = LEFT;
+					animate("walk");
+				} else if (acceleration.x > 0) {
+					facing = RIGHT;
+					animate("walk");
+				} else {
+					animate("stand");
+				}
 			}
 		}
 		
